@@ -9,7 +9,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Member {
+public class Member_backup {
 
     @Id @GeneratedValue
     private Long id;

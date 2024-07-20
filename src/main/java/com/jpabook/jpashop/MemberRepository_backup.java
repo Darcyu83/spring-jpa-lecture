@@ -6,18 +6,18 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 @Repository
-public class MemberRepository {
+public class MemberRepository_backup {
 
     @PersistenceContext
     private EntityManager em; 
     
     
-    public Long save(Member member) {
+    public Long save(Member_backup member) {
         em.persist(member);
         return member.getId();
     }
 
-    public Member find(Long id) {
-                return em.find(Member.class, id);
+    public Member_backup find(Long id) {
+                return em.find(Member_backup.class, id);
     }
 }

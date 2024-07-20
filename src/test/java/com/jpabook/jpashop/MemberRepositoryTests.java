@@ -20,21 +20,21 @@ import org.springframework.transaction.annotation.Transactional;
 public class MemberRepositoryTests {
 
     @Autowired
-    MemberRepository memberRepository;
+    MemberRepository_backup memberRepository;
 
     @Test
     @Transactional
     @Rollback(false)
     public void testMember() throws Exception{
         //given 
-        Member member = new Member();
+        Member_backup member = new Member_backup();
         member.setUsername("tester");
    
         //when 
         Long savedId = memberRepository.save(member);
         
         //then
-        Member findMember = memberRepository.find(savedId);
+        Member_backup findMember = memberRepository.find(savedId);
         Assertions.assertThat(findMember.getId()).isEqualTo(savedId);
         Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
         Assertions.assertThat(findMember).isEqualTo(member); //JPA 엔티티 동일성 보장
